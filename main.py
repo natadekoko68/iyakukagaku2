@@ -15,7 +15,6 @@ df_upper = df[df["No. of atoms"] > num]
 from scipy.optimize import curve_fit
 
 a, _ = curve_fit(lambda t, intercept, slope: intercept + slope * np.log(t), df["No. of atoms"], df["−log K1†"])
-
 p, _ = curve_fit(lambda t, intercept, slope: intercept + slope * t, df_under["No. of atoms"], df_under["−log K1†"])
 r, _ = curve_fit(lambda t, intercept, slope: intercept + slope * t, df_upper["No. of atoms"], df_upper["−log K1†"])
 
